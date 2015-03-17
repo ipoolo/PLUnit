@@ -14,6 +14,11 @@
 		93C879671AB8135200530718 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C879661AB8135200530718 /* Images.xcassets */; };
 		93C8796A1AB8135200530718 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93C879681AB8135200530718 /* LaunchScreen.xib */; };
 		93C879761AB8135200530718 /* PLUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879751AB8135200530718 /* PLUnitTests.m */; };
+		93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879841AB8144800530718 /* NSObject+Reflection.m */; };
+		93C879921AB8144F00530718 /* PLLCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879881AB8144F00530718 /* PLLCircleImageView.m */; };
+		93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8798B1AB8144F00530718 /* PLLCircleProgressView.m */; };
+		93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8798E1AB8144F00530718 /* PLPageScrollView.m */; };
+		93C879951AB8144F00530718 /* PLWelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879911AB8144F00530718 /* PLWelcomeVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,16 @@
 		93C8796F1AB8135200530718 /* PLUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C879741AB8135200530718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C879751AB8135200530718 /* PLUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLUnitTests.m; sourceTree = "<group>"; };
+		93C879831AB8144800530718 /* NSObject+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Reflection.h"; sourceTree = "<group>"; };
+		93C879841AB8144800530718 /* NSObject+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflection.m"; sourceTree = "<group>"; };
+		93C879871AB8144F00530718 /* PLLCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLCircleImageView.h; sourceTree = "<group>"; };
+		93C879881AB8144F00530718 /* PLLCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLCircleImageView.m; sourceTree = "<group>"; };
+		93C8798A1AB8144F00530718 /* PLLCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLCircleProgressView.h; sourceTree = "<group>"; };
+		93C8798B1AB8144F00530718 /* PLLCircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLCircleProgressView.m; sourceTree = "<group>"; };
+		93C8798D1AB8144F00530718 /* PLPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPageScrollView.h; sourceTree = "<group>"; };
+		93C8798E1AB8144F00530718 /* PLPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPageScrollView.m; sourceTree = "<group>"; };
+		93C879901AB8144F00530718 /* PLWelcomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLWelcomeVC.h; sourceTree = "<group>"; };
+		93C879911AB8144F00530718 /* PLWelcomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLWelcomeVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,8 @@
 		93C879581AB8135200530718 /* PLUnit */ = {
 			isa = PBXGroup;
 			children = (
+				93C879801AB8143E00530718 /* unit */,
+				93C8797F1AB8135800530718 /* view */,
 				93C8795D1AB8135200530718 /* AppDelegate.h */,
 				93C8795E1AB8135200530718 /* AppDelegate.m */,
 				93C879601AB8135200530718 /* ViewController.h */,
@@ -117,6 +134,78 @@
 				93C879741AB8135200530718 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93C8797F1AB8135800530718 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				93C879861AB8144F00530718 /* PLLCircelImageView */,
+				93C879891AB8144F00530718 /* PLLCircleProgressView */,
+				93C8798C1AB8144F00530718 /* PLPageScrollView */,
+				93C8798F1AB8144F00530718 /* PLWelcomeVC */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		93C879801AB8143E00530718 /* unit */ = {
+			isa = PBXGroup;
+			children = (
+				93C879811AB8144800530718 /* hourMinuteTosecond */,
+				93C879821AB8144800530718 /* reflectionData */,
+			);
+			name = unit;
+			sourceTree = "<group>";
+		};
+		93C879811AB8144800530718 /* hourMinuteTosecond */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = hourMinuteTosecond;
+			sourceTree = "<group>";
+		};
+		93C879821AB8144800530718 /* reflectionData */ = {
+			isa = PBXGroup;
+			children = (
+				93C879831AB8144800530718 /* NSObject+Reflection.h */,
+				93C879841AB8144800530718 /* NSObject+Reflection.m */,
+			);
+			path = reflectionData;
+			sourceTree = "<group>";
+		};
+		93C879861AB8144F00530718 /* PLLCircelImageView */ = {
+			isa = PBXGroup;
+			children = (
+				93C879871AB8144F00530718 /* PLLCircleImageView.h */,
+				93C879881AB8144F00530718 /* PLLCircleImageView.m */,
+			);
+			path = PLLCircelImageView;
+			sourceTree = "<group>";
+		};
+		93C879891AB8144F00530718 /* PLLCircleProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				93C8798A1AB8144F00530718 /* PLLCircleProgressView.h */,
+				93C8798B1AB8144F00530718 /* PLLCircleProgressView.m */,
+			);
+			path = PLLCircleProgressView;
+			sourceTree = "<group>";
+		};
+		93C8798C1AB8144F00530718 /* PLPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				93C8798D1AB8144F00530718 /* PLPageScrollView.h */,
+				93C8798E1AB8144F00530718 /* PLPageScrollView.m */,
+			);
+			path = PLPageScrollView;
+			sourceTree = "<group>";
+		};
+		93C8798F1AB8144F00530718 /* PLWelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				93C879901AB8144F00530718 /* PLWelcomeVC.h */,
+				93C879911AB8144F00530718 /* PLWelcomeVC.m */,
+			);
+			path = PLWelcomeVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +309,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C879621AB8135200530718 /* ViewController.m in Sources */,
+				93C879951AB8144F00530718 /* PLWelcomeVC.m in Sources */,
+				93C879921AB8144F00530718 /* PLLCircleImageView.m in Sources */,
 				93C8795F1AB8135200530718 /* AppDelegate.m in Sources */,
+				93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */,
+				93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */,
+				93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */,
 				93C8795C1AB8135200530718 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
