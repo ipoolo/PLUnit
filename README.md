@@ -14,4 +14,12 @@ README
 #####PLPageScrollView
 	欢迎页面
 	
+#####PLPLLScreenShot
+	截屏
+
+	
 ##mode
+
+#####reflection
+	object 反射 （用于绑定数据）
+
