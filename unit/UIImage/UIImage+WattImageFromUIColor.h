@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (WattImageFromUIColor)
-+(UIImage* )wattimageFromUicolor:(UIColor *) color;
++(UIImage* )wattimageFromUicolor:(UIColor *)color;
 
 @end
