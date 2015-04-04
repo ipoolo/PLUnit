@@ -20,6 +20,7 @@
 		93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8798E1AB8144F00530718 /* PLPageScrollView.m */; };
 		93C879951AB8144F00530718 /* PLWelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879911AB8144F00530718 /* PLWelcomeVC.m */; };
 		93C879991AB81EA300530718 /* UIView+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879981AB81EA300530718 /* UIView+ScreenShot.m */; };
+		93F13B851ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F13B841ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		93C879911AB8144F00530718 /* PLWelcomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLWelcomeVC.m; sourceTree = "<group>"; };
 		93C879971AB81EA300530718 /* UIView+ScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ScreenShot.h"; sourceTree = "<group>"; };
 		93C879981AB81EA300530718 /* UIView+ScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ScreenShot.m"; sourceTree = "<group>"; };
+		93F13B831ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+WattImageFromUIColor.h"; path = "unit/UIImage/UIImage+WattImageFromUIColor.h"; sourceTree = SOURCE_ROOT; };
+		93F13B841ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+WattImageFromUIColor.m"; path = "unit/UIImage/UIImage+WattImageFromUIColor.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 		93C879801AB8143E00530718 /* unit */ = {
 			isa = PBXGroup;
 			children = (
+				93F13B821ACFEBAC000DA503 /* UIImage */,
 				93C879821AB8144800530718 /* reflectionData */,
 			);
 			name = unit;
@@ -211,6 +215,15 @@
 				93C879981AB81EA300530718 /* UIView+ScreenShot.m */,
 			);
 			name = PLLScreenShot;
+			sourceTree = "<group>";
+		};
+		93F13B821ACFEBAC000DA503 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				93F13B831ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.h */,
+				93F13B841ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.m */,
+			);
+			name = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 				93C879621AB8135200530718 /* ViewController.m in Sources */,
 				93C879951AB8144F00530718 /* PLWelcomeVC.m in Sources */,
 				93C879991AB81EA300530718 /* UIView+ScreenShot.m in Sources */,
+				93F13B851ACFEBE9000DA503 /* UIImage+WattImageFromUIColor.m in Sources */,
 				93C879921AB8144F00530718 /* PLLCircleImageView.m in Sources */,
 				93C8795F1AB8135200530718 /* AppDelegate.m in Sources */,
 				93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */,
