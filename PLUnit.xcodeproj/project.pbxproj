@@ -19,6 +19,8 @@
 		93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8798B1AB8144F00530718 /* PLLCircleProgressView.m */; };
 		93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8798E1AB8144F00530718 /* PLPageScrollView.m */; };
 		93C879951AB8144F00530718 /* PLWelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879911AB8144F00530718 /* PLWelcomeVC.m */; };
+		93D738181AD54E5800352D51 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D738151AD54E5800352D51 /* NSString+MD5.m */; };
+		93D738191AD54E5800352D51 /* NSString+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D738171AD54E5800352D51 /* NSString+SHA.m */; };
 		93FA22161AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FA22151AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m */; };
 		93FA22191AD3D39F00E23960 /* UIView+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FA22181AD3D39F00E23960 /* UIView+ScreenShot.m */; };
 		93FA221D1AD3D3E500E23960 /* UIView+frameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FA221C1AD3D3E500E23960 /* UIView+frameHelper.m */; };
@@ -58,6 +60,10 @@
 		93C8798E1AB8144F00530718 /* PLPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPageScrollView.m; sourceTree = "<group>"; };
 		93C879901AB8144F00530718 /* PLWelcomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLWelcomeVC.h; sourceTree = "<group>"; };
 		93C879911AB8144F00530718 /* PLWelcomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLWelcomeVC.m; sourceTree = "<group>"; };
+		93D738141AD54E5800352D51 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "category/NSString/NSString+MD5.h"; sourceTree = SOURCE_ROOT; };
+		93D738151AD54E5800352D51 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "category/NSString/NSString+MD5.m"; sourceTree = SOURCE_ROOT; };
+		93D738161AD54E5800352D51 /* NSString+SHA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SHA.h"; path = "category/NSString/NSString+SHA.h"; sourceTree = SOURCE_ROOT; };
+		93D738171AD54E5800352D51 /* NSString+SHA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SHA.m"; path = "category/NSString/NSString+SHA.m"; sourceTree = SOURCE_ROOT; };
 		93FA22141AD3D35B00E23960 /* UIImage+WattImageFromUIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WattImageFromUIColor.h"; sourceTree = "<group>"; };
 		93FA22151AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WattImageFromUIColor.m"; sourceTree = "<group>"; };
 		93FA22171AD3D39F00E23960 /* UIView+ScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+ScreenShot.h"; path = "category/UIView/UIView+ScreenShot.h"; sourceTree = SOURCE_ROOT; };
@@ -218,6 +224,17 @@
 			name = PLLScreenShot;
 			sourceTree = "<group>";
 		};
+		93D738131AD54E4C00352D51 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				93D738141AD54E5800352D51 /* NSString+MD5.h */,
+				93D738151AD54E5800352D51 /* NSString+MD5.m */,
+				93D738161AD54E5800352D51 /* NSString+SHA.h */,
+				93D738171AD54E5800352D51 /* NSString+SHA.m */,
+			);
+			name = NSString;
+			sourceTree = "<group>";
+		};
 		93F13B821ACFEBAC000DA503 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +258,7 @@
 		93FA22101AD3D30700E23960 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				93D738131AD54E4C00352D51 /* NSString */,
 				93FA220F1AD3D2F000E23960 /* UIView */,
 				93F13B821ACFEBAC000DA503 /* UIImage */,
 			);
@@ -353,6 +371,8 @@
 				93FA22161AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m in Sources */,
 				93FA22191AD3D39F00E23960 /* UIView+ScreenShot.m in Sources */,
 				93C8795F1AB8135200530718 /* AppDelegate.m in Sources */,
+				93D738191AD54E5800352D51 /* NSString+SHA.m in Sources */,
+				93D738181AD54E5800352D51 /* NSString+MD5.m in Sources */,
 				93FA221D1AD3D3E500E23960 /* UIView+frameHelper.m in Sources */,
 				93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */,
 				93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */,
