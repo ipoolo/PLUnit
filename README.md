@@ -20,6 +20,14 @@ README
 #####UIImage+WattImageFromUIColor
 	通过传入的颜色获取 1*1像素的纯色UIImage】
 	主要用于 需要纯色image的时候 不用ps再自己做一个 直接用代码生成
+
+##NSString
+
+######NSString+md5
+	md5加密
+	
+######NSString+SHA
+	sha加密
 	
 ##mode
 
