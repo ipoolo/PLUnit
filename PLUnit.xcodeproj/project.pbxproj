@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
 		93C8795C1AB8135200530718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795B1AB8135200530718 /* main.m */; };
 		93C8795F1AB8135200530718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795E1AB8135200530718 /* AppDelegate.m */; };
 		93C879621AB8135200530718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879611AB8135200530718 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930AE4441AEF4DB500BA9B51 /* UITableView+pageDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+pageDisplay.h"; path = "category/UITableView/UITableView+pageDisplay.h"; sourceTree = SOURCE_ROOT; };
+		930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+pageDisplay.m"; path = "category/UITableView/UITableView+pageDisplay.m"; sourceTree = SOURCE_ROOT; };
 		93C879561AB8135200530718 /* PLUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C8795A1AB8135200530718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C8795B1AB8135200530718 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930AE4431AEF4DA100BA9B51 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				930AE4441AEF4DB500BA9B51 /* UITableView+pageDisplay.h */,
+				930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */,
+			);
+			name = UITableView;
+			sourceTree = "<group>";
+		};
 		93C8794D1AB8135200530718 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +270,7 @@
 		93FA22101AD3D30700E23960 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				930AE4431AEF4DA100BA9B51 /* UITableView */,
 				93D738131AD54E4C00352D51 /* NSString */,
 				93FA220F1AD3D2F000E23960 /* UIView */,
 				93F13B821ACFEBAC000DA503 /* UIImage */,
@@ -374,6 +387,7 @@
 				93D738191AD54E5800352D51 /* NSString+SHA.m in Sources */,
 				93D738181AD54E5800352D51 /* NSString+MD5.m in Sources */,
 				93FA221D1AD3D3E500E23960 /* UIView+frameHelper.m in Sources */,
+				930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */,
 				93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */,
 				93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */,
 				93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */,

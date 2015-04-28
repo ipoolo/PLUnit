@@ -33,8 +33,14 @@ typedef enum {
 
 @property (nonatomic,strong) UIColor *startHandleColor;
 
+@property (nonatomic,strong) UILabel *describeLabel;
+
+@property (nonatomic,strong) UILabel *titleLabel;
+
 -(void)setLineWidth:(float)lineWidth maxValue:(float) maxValue curValue:(float) curValue radius:(float)radius  circleOuterRaceBackgroundColor:(UIColor*)circleOuterRaceBackgroundColor circleOuterRaceForegroundColor:(UIColor*)circleOuterRaceForegroundColor circleInterBackgroundColor:(UIColor*)circleInterBackgroundColor;
 
 -(void)setGradinetForeColorRed:(float)foreRed green:(float)foreGreen blue:(float)foreBlue alpha:(float)foreAplha andBackColorRed:(float)backRed green:(float)backGreen blue:(float)backBlue alpha:(float)backAplha;
+
+
 
 @end

@@ -12,18 +12,20 @@
 
 #define SQR(x)			( (x) * (x) )
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #import "PLLCircleProgressView.h"
 
 @interface PLLCircleProgressView(){
     
 }
-@property (nonatomic,assign) float percenValue;//(value sizein 1~0)
+@property (nonatomic,assign) CGFloat percenValue;//(value sizein 1~0)
 
 @end
 
 
 @implementation PLLCircleProgressView{
-    UILabel* _title;
+    
 }
 
 @synthesize percenValue=_percenValue;
@@ -35,10 +37,10 @@ static const float defaultInitLocation=90.0f;
 
 -(CGFloat)percenValue{
     return _percenValue;
-
+    
 }
 
--(void)setPercenValue:(float)percenValue{
+-(void)setPercenValue:(CGFloat)percenValue{
     if(_percenValue!=percenValue){
         _percenValue=percenValue;
         [self setNeedsDisplay];
@@ -56,9 +58,9 @@ static const float defaultInitLocation=90.0f;
     if(_curValue!=curValue){
         _curValue=curValue;
         if(_curValue>_maxValue){
-            _title.text=[NSString stringWithFormat:@"%0.0f 越界",curValue];
+            _titleLabel.text=[NSString stringWithFormat:@"%0.0f 越界",curValue];
         }else{
-            _title.text=[NSString stringWithFormat:@"%0.0f",curValue];
+            _titleLabel.text=[NSString stringWithFormat:@"%0.0f",curValue];
         }
         [self setPercenValue:_curValue/_maxValue];
     }
@@ -88,16 +90,34 @@ static const float defaultInitLocation=90.0f;
         self.opaque=NO;
         
         //title
-        _title=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        [self addSubview:_title];
-        _title.center=self.center;
-        _title.text=@"0";
-        [_title setTextColor:[UIColor whiteColor]];
-        [_title setTextAlignment:NSTextAlignmentCenter];
+        _titleLabel=[[UILabel alloc] init];
+        [self addSubview:_titleLabel];
+        _titleLabel.text=@"0";
+        [_titleLabel setTextColor:UIColorFromRGB(0x333333)];
+        [_titleLabel setFont:[UIFont boldSystemFontOfSize:60.0f]];
+        [_titleLabel setTextAlignment:NSTextAlignmentCenter];
         self.initLocation=defaultInitLocation;//默认从90
         self.isMoveWithTouch=NO;
         self.needStartHandle=YES;
         self.startHandleColor=[UIColor redColor];
+        
+        _describeLabel = [[UILabel alloc] init];
+        [_describeLabel setTextColor:UIColorFromRGB(0x666666)];
+        [_describeLabel setFont:[UIFont boldSystemFontOfSize:12.0f]];
+        [_describeLabel setTextAlignment:NSTextAlignmentCenter];
+        [_describeLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_describeLabel setText:@"剩余时长"];
+        
+        [self addSubview:_describeLabel];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_describeLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        
+        NSDictionary *views = NSDictionaryOfVariableBindings(_describeLabel,_titleLabel);
+        NSDictionary *metrics = @{@"describeSpacing":@(10)};
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_describeLabel]-(describeSpacing)-[_titleLabel]" options:NSLayoutFormatDirectionLeadingToTrailing metrics:metrics views:views]];
+        
+        [_titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     }
     return self;
 }
@@ -128,11 +148,11 @@ static const float defaultInitLocation=90.0f;
     CGContextSetLineWidth(imageCtx, self.lineWidth);
     CGContextSetLineCap(imageCtx, kCGLineCapButt);
     CGContextDrawPath(imageCtx, kCGPathStroke);
-
+    
     //mask 是bitmap才可 此处不能用UIImage转成CGImage
     CGImageRef mask=CGBitmapContextCreateImage(UIGraphicsGetCurrentContext());
     UIGraphicsEndImageContext();
-
+    
     
     CGContextSaveGState(ctx);
     //clip前先存储以防需要使用clip前的状态
@@ -140,35 +160,35 @@ static const float defaultInitLocation=90.0f;
     CGImageRelease(mask);
     
     if(self.drawMode==KDrawModeSingle){
-    //        绘制单色
+        //        绘制单色
         CGContextAddRect(ctx,CGRectMake(0, 0, rect.size.width, rect.size.height));
         [self.circleOuterRaceForegroundColor setFill];
         CGContextDrawPath(ctx, kCGPathFill);
     }else if (self.drawMode==KDrawModeGradient){
-    //      绘制渐变(梯度)
+        //      绘制渐变(梯度)
         CGFloat components[8]={
-                                [(NSNumber*)[gradientColorArray objectAtIndex:0] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:1] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:2] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:3] floatValue], //foreColor
-                                [(NSNumber*)[gradientColorArray objectAtIndex:4] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:5] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:6] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:7] floatValue]};//backColor
+            [(NSNumber*)[gradientColorArray objectAtIndex:0] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:1] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:2] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:3] floatValue], //foreColor
+            [(NSNumber*)[gradientColorArray objectAtIndex:4] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:5] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:6] floatValue],[(NSNumber*)[gradientColorArray objectAtIndex:7] floatValue]};//backColor
         
         //location 每个数字 代表对应颜色所在的位置0~1
         CGFloat locations[2]={
             0,
             1,
         };
-
+        
         CGColorSpaceRef colorSpace=CGColorSpaceCreateDeviceRGB();
         CGGradientRef gradient=CGGradientCreateWithColorComponents(colorSpace, components, locations, 2);
         CGPoint startPonit=CGPointMake(CGRectGetMidX(rect),self.center.y-self.radius-self.lineWidth/2);
         CGPoint endPonit=CGPointMake(CGRectGetMidX(rect),self.center.y+self.radius+self.lineWidth/2);
-            
+        
         CGContextDrawLinearGradient(ctx, gradient, startPonit, endPonit, kCGGradientDrawsBeforeStartLocation);
-            
+        
         //kCGGradientDrawsAfterEndLocation endLocatio(结束点)之后也绘制
         //kCGGradientDrawsBeforeStartLocation StartLocation(开始点)之后也绘制
         CGGradientRelease(gradient),gradient=NULL;
-
+        
     }
-
+    
     if(self.needStartHandle){
         CGContextRestoreGState(ctx);
         [self.startHandleColor setStroke];
@@ -187,7 +207,7 @@ static const float defaultInitLocation=90.0f;
 }
 
 -(CGFloat)subRadian:(CGFloat)radian{
-
+    
     if(radian>ToRadWithoutPI(self.initLocation)){
         radian=[self subRadian:(radian-2)];
     }else if(radian<(-2.0f+ToRadWithoutPI(self.initLocation))){
@@ -215,7 +235,7 @@ float AngleFromNorth(CGPoint p1, CGPoint p2) {
     double radians = atan2(v.y,v.x);
     result = ToDeg(radians);
     return (result >=0  ? result : result + 360.0);
-
+    
 }
 
 -(float)adpterCurvalue:(float)value{
