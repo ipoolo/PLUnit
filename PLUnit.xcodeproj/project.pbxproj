@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
+		93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93349A811AF6596000387A1D /* PHHPageControlModel.m */; };
 		93C8795C1AB8135200530718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795B1AB8135200530718 /* main.m */; };
 		93C8795F1AB8135200530718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795E1AB8135200530718 /* AppDelegate.m */; };
 		93C879621AB8135200530718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879611AB8135200530718 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		930AE4441AEF4DB500BA9B51 /* UITableView+pageDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+pageDisplay.h"; path = "category/UITableView/UITableView+pageDisplay.h"; sourceTree = SOURCE_ROOT; };
 		930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+pageDisplay.m"; path = "category/UITableView/UITableView+pageDisplay.m"; sourceTree = SOURCE_ROOT; };
+		93349A801AF6596000387A1D /* PHHPageControlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHHPageControlModel.h; path = unit/pageControl/PHHPageControlModel.h; sourceTree = SOURCE_ROOT; };
+		93349A811AF6596000387A1D /* PHHPageControlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHHPageControlModel.m; path = unit/pageControl/PHHPageControlModel.m; sourceTree = SOURCE_ROOT; };
 		93C879561AB8135200530718 /* PLUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C8795A1AB8135200530718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C8795B1AB8135200530718 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +103,15 @@
 				930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */,
 			);
 			name = UITableView;
+			sourceTree = "<group>";
+		};
+		93349A7F1AF6595600387A1D /* pageModel */ = {
+			isa = PBXGroup;
+			children = (
+				93349A801AF6596000387A1D /* PHHPageControlModel.h */,
+				93349A811AF6596000387A1D /* PHHPageControlModel.m */,
+			);
+			name = pageModel;
 			sourceTree = "<group>";
 		};
 		93C8794D1AB8135200530718 = {
@@ -179,6 +191,7 @@
 		93C879801AB8143E00530718 /* unit */ = {
 			isa = PBXGroup;
 			children = (
+				93349A7F1AF6595600387A1D /* pageModel */,
 				93C879821AB8144800530718 /* reflectionData */,
 			);
 			name = unit;
@@ -389,6 +402,7 @@
 				93FA221D1AD3D3E500E23960 /* UIView+frameHelper.m in Sources */,
 				930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */,
 				93C879851AB8144800530718 /* NSObject+Reflection.m in Sources */,
+				93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */,
 				93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */,
 				93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */,
 				93C8795C1AB8135200530718 /* main.m in Sources */,
