@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93055F991AFC94EF003851E0 /* UIView+changeAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055F981AFC94EF003851E0 /* UIView+changeAnchor.m */; };
 		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
 		93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93349A811AF6596000387A1D /* PHHPageControlModel.m */; };
 		93C8795C1AB8135200530718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795B1AB8135200530718 /* main.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93055F971AFC94EF003851E0 /* UIView+changeAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+changeAnchor.h"; sourceTree = "<group>"; };
+		93055F981AFC94EF003851E0 /* UIView+changeAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+changeAnchor.m"; sourceTree = "<group>"; };
 		930AE4441AEF4DB500BA9B51 /* UITableView+pageDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+pageDisplay.h"; path = "category/UITableView/UITableView+pageDisplay.h"; sourceTree = SOURCE_ROOT; };
 		930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+pageDisplay.m"; path = "category/UITableView/UITableView+pageDisplay.m"; sourceTree = SOURCE_ROOT; };
 		93349A801AF6596000387A1D /* PHHPageControlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHHPageControlModel.h; path = unit/pageControl/PHHPageControlModel.h; sourceTree = SOURCE_ROOT; };
@@ -272,6 +275,8 @@
 		93FA220F1AD3D2F000E23960 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				93055F971AFC94EF003851E0 /* UIView+changeAnchor.h */,
+				93055F981AFC94EF003851E0 /* UIView+changeAnchor.m */,
 				93FA22171AD3D39F00E23960 /* UIView+ScreenShot.h */,
 				93FA22181AD3D39F00E23960 /* UIView+ScreenShot.m */,
 				93FA221B1AD3D3E500E23960 /* UIView+frameHelper.h */,
@@ -396,6 +401,7 @@
 				93C879921AB8144F00530718 /* PLLCircleImageView.m in Sources */,
 				93FA22161AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m in Sources */,
 				93FA22191AD3D39F00E23960 /* UIView+ScreenShot.m in Sources */,
+				93055F991AFC94EF003851E0 /* UIView+changeAnchor.m in Sources */,
 				93C8795F1AB8135200530718 /* AppDelegate.m in Sources */,
 				93D738191AD54E5800352D51 /* NSString+SHA.m in Sources */,
 				93D738181AD54E5800352D51 /* NSString+MD5.m in Sources */,
