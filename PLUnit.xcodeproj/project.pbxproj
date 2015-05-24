@@ -11,7 +11,7 @@
 		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
 		93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93349A811AF6596000387A1D /* PHHPageControlModel.m */; };
 		93A40FDE1B119AAA0002F24A /* PLLPushHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */; };
-		93A40FDF1B119AAA0002F24A /* PLLPushHandlerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A40FDD1B119AAA0002F24A /* PLLPushHandlerWindow.xib */; };
+		93A40FE91B11A75B0002F24A /* PLLPushHandlerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */; };
 		93C8795C1AB8135200530718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795B1AB8135200530718 /* main.m */; };
 		93C8795F1AB8135200530718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795E1AB8135200530718 /* AppDelegate.m */; };
 		93C879621AB8135200530718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C879611AB8135200530718 /* ViewController.m */; };
@@ -50,7 +50,7 @@
 		93349A811AF6596000387A1D /* PHHPageControlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHHPageControlModel.m; path = unit/pageControl/PHHPageControlModel.m; sourceTree = SOURCE_ROOT; };
 		93A40FDB1B119AAA0002F24A /* PLLPushHandlerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLPushHandlerManager.h; path = view/PLLPushHandlerWindow/PLLPushHandlerManager.h; sourceTree = SOURCE_ROOT; };
 		93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLPushHandlerManager.m; path = view/PLLPushHandlerWindow/PLLPushHandlerManager.m; sourceTree = SOURCE_ROOT; };
-		93A40FDD1B119AAA0002F24A /* PLLPushHandlerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PLLPushHandlerWindow.xib; path = view/PLLPushHandlerWindow/PLLPushHandlerWindow.xib; sourceTree = SOURCE_ROOT; };
+		93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PLLPushHandlerWindow.xib; path = view/PLLPushHandlerWindow/PLLPushHandlerWindow.xib; sourceTree = SOURCE_ROOT; };
 		93C879561AB8135200530718 /* PLUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C8795A1AB8135200530718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C8795B1AB8135200530718 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,9 +125,9 @@
 		93A40FD51B1199B00002F24A /* PLLPushHandlerWindow */ = {
 			isa = PBXGroup;
 			children = (
+				93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */,
 				93A40FDB1B119AAA0002F24A /* PLLPushHandlerManager.h */,
 				93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */,
-				93A40FDD1B119AAA0002F24A /* PLLPushHandlerWindow.xib */,
 			);
 			name = PLLPushHandlerWindow;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 				93C879651AB8135200530718 /* Main.storyboard in Resources */,
 				93C8796A1AB8135200530718 /* LaunchScreen.xib in Resources */,
 				93C879671AB8135200530718 /* Images.xcassets in Resources */,
-				93A40FDF1B119AAA0002F24A /* PLLPushHandlerWindow.xib in Resources */,
+				93A40FE91B11A75B0002F24A /* PLLPushHandlerWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

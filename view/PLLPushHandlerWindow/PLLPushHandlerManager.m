@@ -7,6 +7,7 @@
 //
 
 #import "PLLPushHandlerManager.h"
+#import <AudioToolbox/AudioToolbox.h>
 @interface PLLPushHandlerManager()
 @property (strong, nonatomic) IBOutlet UIWindow *pushWindow;
 @property (weak, nonatomic) IBOutlet UIView *coverView;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *statusImageView;
 @property (weak, nonatomic) IBOutlet UIView *imageContainerView;
 @property (nonatomic,strong) NSLayoutConstraint *imageContainerHeightConstraint;
+@property (nonatomic,assign) CGFloat coverTargetAlpha;
 
 @end
 
@@ -27,6 +29,7 @@
     dispatch_once(&onceToken, ^{
         manager = [[PLLPushHandlerManager alloc] init];
         [[NSBundle mainBundle] loadNibNamed:@"PLLPushHandlerWindow" owner:manager options:nil];
+        manager.pushWindow.hidden = YES;//从nibload的 初始hidden=no  从alloc init 的 初始 hidden =yes （估计apple initWithCoder代码修改的）
         manager.imageContainerHeightConstraint = [NSLayoutConstraint constraintWithItem:manager.imageContainerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:0];
         [manager.coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:manager action:@selector(hide)]];
         
@@ -35,21 +38,26 @@
         
         [[manager.pushAlert layer] setCornerRadius:5.0f];
         [[manager.pushAlert layer] setMasksToBounds:YES];
-
+        
+        
+        
     });
     return manager;
 }
 
--(void)showTitle:(NSString *)title body:(NSString *)body coverAlpha:(NSInteger) coverAlpha statusImage:(UIImage *) image{
+-(void)showTitle:(NSString *)title body:(NSString *)body coverAlpha:(CGFloat) coverAlpha statusImage:(UIImage *) image{
     [self setTitle:title];
     [self setBody:body];
     [self setCoverAlpha:coverAlpha];
     [self setStatusImage:image];
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     if(![self isShowing]){
-        self.coverView.alpha = 0;
         [self.pushWindow makeKeyAndVisible];
+        self.coverView.alpha = 0.0f;
+        self.pushAlert.alpha = 0.0f;
         [UIView animateWithDuration:0.3f animations:^{
-            self.coverView.alpha = 1.0f;
+            self.coverView.alpha = self.coverTargetAlpha;
+            self.pushAlert.alpha = 1.0f;
         }];
     }
     
@@ -59,6 +67,7 @@
     if([self isShowing]){
         [UIView animateWithDuration:0.3f animations:^{
             self.coverView.alpha = 0.0f;
+            self.pushAlert.alpha = 0.0f;
         }completion:^(BOOL finished) {
             self.pushWindow.hidden = YES;
         }];
@@ -88,8 +97,8 @@
     }
 }
 
--(void)setCoverAlpha:(NSInteger)coverAlpha{
-    self.coverView.alpha = coverAlpha;
+-(void)setCoverAlpha:(CGFloat)coverAlpha{
+    [self setCoverTargetAlpha:coverAlpha];
 }
 
 #pragma mark - private
@@ -102,6 +111,7 @@
 }
 
 -(BOOL)isShowing{
+    
     if(self.pushWindow.hidden){
         return NO;
     }

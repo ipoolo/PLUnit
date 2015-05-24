@@ -13,7 +13,7 @@
 
 +(instancetype)shareManager;
 
--(void)showTitle:(NSString *)title body:(NSString *)body coverAlpha:(NSInteger) coverAlpha statusImage:(UIImage *) image;
+-(void)showTitle:(NSString *)title body:(NSString *)body coverAlpha:(CGFloat) coverAlpha statusImage:(UIImage *) image;
 
 -(void)setBody:(NSString *) body;
 
@@ -21,6 +21,8 @@
 
 -(void)setStatusImage:(UIImage *) image;
 
--(void)setCoverAlpha:(NSInteger)coverAlpha;
+-(void)setCoverAlpha:(CGFloat)coverAlpha;
+
+-(void)hide;
 
 @end
