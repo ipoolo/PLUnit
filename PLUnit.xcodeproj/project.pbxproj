@@ -10,6 +10,7 @@
 		93055F991AFC94EF003851E0 /* UIView+changeAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055F981AFC94EF003851E0 /* UIView+changeAnchor.m */; };
 		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
 		93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93349A811AF6596000387A1D /* PHHPageControlModel.m */; };
+		93666D161B18F5260071B922 /* PLLVCConverAnimatedDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */; };
 		93A40FDE1B119AAA0002F24A /* PLLPushHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */; };
 		93A40FE91B11A75B0002F24A /* PLLPushHandlerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */; };
 		93C8795C1AB8135200530718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C8795B1AB8135200530718 /* main.m */; };
@@ -48,6 +49,8 @@
 		930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+pageDisplay.m"; path = "category/UITableView/UITableView+pageDisplay.m"; sourceTree = SOURCE_ROOT; };
 		93349A801AF6596000387A1D /* PHHPageControlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHHPageControlModel.h; path = unit/pageControl/PHHPageControlModel.h; sourceTree = SOURCE_ROOT; };
 		93349A811AF6596000387A1D /* PHHPageControlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHHPageControlModel.m; path = unit/pageControl/PHHPageControlModel.m; sourceTree = SOURCE_ROOT; };
+		93666D141B18F5260071B922 /* PLLVCConverAnimatedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLVCConverAnimatedDelegate.h; path = unit/PLLVCConverAnimatedDelegate/PLLVCConverAnimatedDelegate.h; sourceTree = SOURCE_ROOT; };
+		93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLVCConverAnimatedDelegate.m; path = unit/PLLVCConverAnimatedDelegate/PLLVCConverAnimatedDelegate.m; sourceTree = SOURCE_ROOT; };
 		93A40FDB1B119AAA0002F24A /* PLLPushHandlerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLPushHandlerManager.h; path = view/PLLPushHandlerWindow/PLLPushHandlerManager.h; sourceTree = SOURCE_ROOT; };
 		93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLPushHandlerManager.m; path = view/PLLPushHandlerWindow/PLLPushHandlerManager.m; sourceTree = SOURCE_ROOT; };
 		93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PLLPushHandlerWindow.xib; path = view/PLLPushHandlerWindow/PLLPushHandlerWindow.xib; sourceTree = SOURCE_ROOT; };
@@ -122,6 +125,15 @@
 			name = pageModel;
 			sourceTree = "<group>";
 		};
+		93666D131B18F5010071B922 /* unit */ = {
+			isa = PBXGroup;
+			children = (
+				93666D141B18F5260071B922 /* PLLVCConverAnimatedDelegate.h */,
+				93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */,
+			);
+			name = unit;
+			sourceTree = "<group>";
+		};
 		93A40FD51B1199B00002F24A /* PLLPushHandlerWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +165,7 @@
 		93C879581AB8135200530718 /* PLUnit */ = {
 			isa = PBXGroup;
 			children = (
+				93666D131B18F5010071B922 /* unit */,
 				93FA22101AD3D30700E23960 /* category */,
 				93C879801AB8143E00530718 /* unit */,
 				93C8797F1AB8135800530718 /* view */,
@@ -419,6 +432,7 @@
 				93FA22161AD3D35B00E23960 /* UIImage+WattImageFromUIColor.m in Sources */,
 				93FA22191AD3D39F00E23960 /* UIView+ScreenShot.m in Sources */,
 				93055F991AFC94EF003851E0 /* UIView+changeAnchor.m in Sources */,
+				93666D161B18F5260071B922 /* PLLVCConverAnimatedDelegate.m in Sources */,
 				93C8795F1AB8135200530718 /* AppDelegate.m in Sources */,
 				93D738191AD54E5800352D51 /* NSString+SHA.m in Sources */,
 				93D738181AD54E5800352D51 /* NSString+MD5.m in Sources */,
