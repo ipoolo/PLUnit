@@ -24,7 +24,7 @@
     if(destinationViewController!=_destinationViewController){
         _destinationViewController = destinationViewController;
         [_destinationViewController.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlerPan:)] ];
-        self.transitionInteracted = YES;
+        
     }
 }
 
@@ -37,12 +37,12 @@
     
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:
+            self.transitionInteracted = YES;
             [self.destinationViewController.navigationController popViewControllerAnimated:YES];
-            //            [self.destinationViewController dismissViewControllerAnimated:YES completion:nil];
+            [self.destinationViewController dismissViewControllerAnimated:YES completion:nil];
             
             break;
         case UIGestureRecognizerStateChanged:
-            
             [self updateInteractiveTransition:percent];
             break;
         default:
@@ -152,6 +152,7 @@
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC{
+    
     if([fromVC respondsToSelector:@selector(converView)]){
         //navigation模式不同全部都是        self.isPresenting = YES;
         self.isPresenting = YES;
@@ -166,7 +167,6 @@
     // Check if this is for our custom transition
     
     return self.transitionInteracted ? self : nil;
-    
 }
 
 
