@@ -15,8 +15,10 @@
 
 @end
 
-@interface PLLVCConverAnimatedDelegate : UIPercentDrivenInteractiveTransition<UIViewControllerAnimatedTransitioning,UIViewControllerTransitioningDelegate>
+@interface PLLVCConverAnimatedDelegate : UIPercentDrivenInteractiveTransition<UIViewControllerAnimatedTransitioning,UIViewControllerTransitioningDelegate,UINavigationControllerDelegate>
 @property (nonatomic,weak) UIViewController *destinationViewController;
 @property (nonatomic,assign) BOOL transitionInteracted;
+@property (nonatomic,assign) CGFloat animationDuration;
+@property (nonatomic,assign) BOOL isPresenting;
 
 @end

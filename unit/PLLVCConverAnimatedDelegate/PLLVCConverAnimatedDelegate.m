@@ -10,7 +10,7 @@
 #import "UIView+ScreenShot.h"
 
 @interface PLLVCConverAnimatedDelegate()
-@property (nonatomic,assign) BOOL isPresenting;
+
 
 @property (nonatomic,assign) CGRect converViewFromFrame;
 @property (nonatomic,assign) CGRect converViewToFrame;
@@ -37,9 +37,12 @@
     
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:
-            [self.destinationViewController dismissViewControllerAnimated:YES completion:nil];
+            [self.destinationViewController.navigationController popViewControllerAnimated:YES];
+            //            [self.destinationViewController dismissViewControllerAnimated:YES completion:nil];
+            
             break;
         case UIGestureRecognizerStateChanged:
+            
             [self updateInteractiveTransition:percent];
             break;
         default:
@@ -48,26 +51,28 @@
 }
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 2.0f;
+    
+    return self.animationDuration<=0?2.0f:self.animationDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
-
+    
     UIViewController<PLLVCConverAnimatedProcotol> *fromVC = (UIViewController<PLLVCConverAnimatedProcotol> *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController<PLLVCConverAnimatedProcotol> *toVC = (UIViewController<PLLVCConverAnimatedProcotol> *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-
+    
     UIView *fromView = (UIView *)[transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = (UIView *)[transitionContext viewForKey:UITransitionContextToViewKey];
     UIView *containerView = [transitionContext containerView];
     UIView *fromConverView = [fromVC converView];
     UIView *toConverView = [toVC converView];
-
+    
     [fromView setNeedsLayout];
     [fromView layoutIfNeeded];
     [toView setNeedsLayout];
     [toView layoutIfNeeded];
     
     UIImageView *intermediaryFromView = [[UIImageView alloc] initWithImage:[fromConverView convertViewToImage]];
+    
     
     CGFloat dissmissAlpha = 0.1f;
     CGAffineTransform offScreenBottom = CGAffineTransformMakeTranslation(0, containerView.frame.size.height);
@@ -91,7 +96,7 @@
         [containerView addSubview:fromView];
         [containerView addSubview:intermediaryFromView];
     }
-
+    
     CGRect toConverViewFrame = toConverView.frame;
     toConverView.frame = [intermediaryFromView.superview convertRect:fromConverView.frame toView:toView];
     
@@ -115,7 +120,7 @@
         intermediaryFromView.alpha = 0.0f;
         toConverView.frame = toConverViewFrame;
     } completion:^(BOOL finished) {
-
+        
         [intermediaryFromView removeFromSuperview];
         [toConverView setAlpha:1.0f];
         [fromConverView setAlpha:1.0f];
@@ -124,7 +129,7 @@
         [toConverView setNeedsLayout];
         [toConverView layoutIfNeeded];
         [transitionContext completeTransition:YES];
-       
+        
     }];
 }
 
@@ -140,6 +145,28 @@
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
     return self.transitionInteracted ? self : nil;
+}
+
+#pragma mark - navigationVCDelegate
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)fromVC
+                                                  toViewController:(UIViewController *)toVC{
+    if([fromVC respondsToSelector:@selector(converView)]){
+        //navigation模式不同全部都是        self.isPresenting = YES;
+        self.isPresenting = YES;
+    }else{
+        self.isPresenting = NO;
+    }
+    return self;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                         interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    // Check if this is for our custom transition
+    
+    return self.transitionInteracted ? self : nil;
+    
 }
 
 
