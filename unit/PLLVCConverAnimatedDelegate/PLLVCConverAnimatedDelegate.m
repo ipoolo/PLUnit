@@ -1,4 +1,4 @@
-//
+
 //  PLLVCConverAnimatedDelegate.m
 //  PLLVCConverAnimated
 //
@@ -47,6 +47,7 @@
             break;
         default:
             [self finishInteractiveTransition];
+            self.transitionInteracted = NO;
     }
 }
 
@@ -63,8 +64,21 @@
     UIView *fromView = (UIView *)[transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = (UIView *)[transitionContext viewForKey:UITransitionContextToViewKey];
     UIView *containerView = [transitionContext containerView];
-    UIView *fromConverView = [fromVC converView];
-    UIView *toConverView = [toVC converView];
+    UIView *fromConverView;
+    UIView *toConverView;
+    
+    if([fromVC respondsToSelector:@selector(converView)]){
+        fromConverView = [fromVC converView];
+    }else{
+        [NSException exceptionWithName:@"CustomError_fromVC_ConverView_invalid" reason:[NSString stringWithFormat:@"%@-fromVC_can't_respondsToSelector_converView",fromVC] userInfo:nil];
+    }
+    if([toVC respondsToSelector:@selector(converView)]){
+        toConverView = [toVC converView];
+    }else{
+        [NSException exceptionWithName:@"CustomError_toVC_ConverView_invalid" reason:[NSString stringWithFormat:@"%@-toVC_can't_respondsToSelector_converView",toVC] userInfo:nil];
+    }
+    //其实只有 能responds才能执行过来...
+    
     
     [fromView setNeedsLayout];
     [fromView layoutIfNeeded];
@@ -134,13 +148,24 @@
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    self.isPresenting = YES;
-    return self;
+    
+    if([presented respondsToSelector:@selector(converView)]&&[presenting respondsToSelector:@selector(converView)]){
+        self.isPresenting = YES;
+        return self;
+    }else{
+        return nil;
+    }
+    
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    self.isPresenting = NO;
-    return self;
+    
+    if([dismissed respondsToSelector:@selector(converView)]){
+        self.isPresenting = NO;
+        return self;
+    }else{
+        return nil;
+    }
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
@@ -153,13 +178,14 @@
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC{
     
-    if([fromVC respondsToSelector:@selector(converView)]){
+    if([fromVC respondsToSelector:@selector(converView)]&&[toVC respondsToSelector:@selector(converView)]){
         //navigation模式不同全部都是        self.isPresenting = YES;
         self.isPresenting = YES;
+        return self;
     }else{
-        self.isPresenting = NO;
+        return nil;
     }
-    return self;
+    
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
