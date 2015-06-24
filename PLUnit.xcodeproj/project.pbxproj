@@ -10,6 +10,7 @@
 		93055F991AFC94EF003851E0 /* UIView+changeAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055F981AFC94EF003851E0 /* UIView+changeAnchor.m */; };
 		930AE4461AEF4DB500BA9B51 /* UITableView+pageDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */; };
 		93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93349A811AF6596000387A1D /* PHHPageControlModel.m */; };
+		9339EFAD1B2D46EB00A66C20 /* PHHTBBaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339EFAC1B2D46EB00A66C20 /* PHHTBBaseHandler.m */; };
 		93666D161B18F5260071B922 /* PLLVCConverAnimatedDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */; };
 		93A40FDE1B119AAA0002F24A /* PLLPushHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A40FDC1B119AAA0002F24A /* PLLPushHandlerManager.m */; };
 		93A40FE91B11A75B0002F24A /* PLLPushHandlerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A40FE81B11A75B0002F24A /* PLLPushHandlerWindow.xib */; };
@@ -49,6 +50,8 @@
 		930AE4451AEF4DB500BA9B51 /* UITableView+pageDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+pageDisplay.m"; path = "category/UITableView/UITableView+pageDisplay.m"; sourceTree = SOURCE_ROOT; };
 		93349A801AF6596000387A1D /* PHHPageControlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHHPageControlModel.h; path = unit/pageControl/PHHPageControlModel.h; sourceTree = SOURCE_ROOT; };
 		93349A811AF6596000387A1D /* PHHPageControlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHHPageControlModel.m; path = unit/pageControl/PHHPageControlModel.m; sourceTree = SOURCE_ROOT; };
+		9339EFAB1B2D46EB00A66C20 /* PHHTBBaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHHTBBaseHandler.h; sourceTree = "<group>"; };
+		9339EFAC1B2D46EB00A66C20 /* PHHTBBaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHHTBBaseHandler.m; sourceTree = "<group>"; };
 		93666D141B18F5260071B922 /* PLLVCConverAnimatedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLVCConverAnimatedDelegate.h; path = unit/PLLVCConverAnimatedDelegate/PLLVCConverAnimatedDelegate.h; sourceTree = SOURCE_ROOT; };
 		93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLVCConverAnimatedDelegate.m; path = unit/PLLVCConverAnimatedDelegate/PLLVCConverAnimatedDelegate.m; sourceTree = SOURCE_ROOT; };
 		93A40FDB1B119AAA0002F24A /* PLLPushHandlerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLPushHandlerManager.h; path = view/PLLPushHandlerWindow/PLLPushHandlerManager.h; sourceTree = SOURCE_ROOT; };
@@ -128,6 +131,8 @@
 		93666D131B18F5010071B922 /* unit */ = {
 			isa = PBXGroup;
 			children = (
+				9339EFAB1B2D46EB00A66C20 /* PHHTBBaseHandler.h */,
+				9339EFAC1B2D46EB00A66C20 /* PHHTBBaseHandler.m */,
 				93666D141B18F5260071B922 /* PLLVCConverAnimatedDelegate.h */,
 				93666D151B18F5260071B922 /* PLLVCConverAnimatedDelegate.m */,
 			);
@@ -443,6 +448,7 @@
 				93349A821AF6596000387A1D /* PHHPageControlModel.m in Sources */,
 				93C879941AB8144F00530718 /* PLPageScrollView.m in Sources */,
 				93C879931AB8144F00530718 /* PLLCircleProgressView.m in Sources */,
+				9339EFAD1B2D46EB00A66C20 /* PHHTBBaseHandler.m in Sources */,
 				93C8795C1AB8135200530718 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
